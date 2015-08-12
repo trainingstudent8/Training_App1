@@ -1,0 +1,29 @@
+trainingstudent#/training_app1:
+
+  PkgInclude:
+    - '*'
+
+  PkgExclude:
+    - node_modules/
+
+  PreRelease:
+    - echo "Begin PreRelease"
+    - sudo apt-get -y update
+    - sudo apt-get -y install nodejs
+    - sudo apt-get -y install npm
+    - sudo npm install
+    - npm test
+
+  PreInstall:
+    - echo "Begin PreInstall"
+    - sudo apt-get -y update
+    - sudo apt-get -y install nodejs
+    - sudo apt-get -y install npm
+
+  PostInstall:
+    - echo "Begin PostInstall"
+    - npm install
+    
+  Exec:
+    - echo "Begin Exec"
+    - /usr/bin/nodejs app.js
