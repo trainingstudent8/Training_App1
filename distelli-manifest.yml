@@ -24,7 +24,6 @@ trainingstudent8/training_app1:
     - echo "Begin PostInstall"
     - npm install
     
-    
   Exec:
     - echo "Begin Exec"
     - /usr/bin/nodejs app.js
